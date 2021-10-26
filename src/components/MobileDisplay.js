@@ -1,7 +1,8 @@
+import CocktailCard from './CocktailCard';
+
 export default function MobileDisplay(props) {
     const nameEles = props.cocktailStack.map((drink) => (
-        <div key={drink.id}>{drink.name}</div>
+        <CocktailCard key={drink.id} cardInfo={drink} />
     ));
-    console.log(props.cocktailStack);
     return <div>{nameEles}</div>;
 }

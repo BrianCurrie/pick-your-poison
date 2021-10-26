@@ -11,22 +11,14 @@ class App extends Component {
             width: 0,
             height: 0,
             mobileWidthBreakpoint: 1000,
-            stackSize: 10,
+            stackSize: 1,
             cocktailStack: [],
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
 
     componentDidMount() {
-        let stack = [];
-
-        for (let i = 0; i < this.state.stackSize; i++) {
-            stack.push(GetRandomCocktail());
-        }
-
-        Promise.all(stack).then((data) => {
-            this.setState({ cocktailStack: data });
-        });
+        this.getInitialCocktails();
 
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
@@ -38,6 +30,18 @@ class App extends Component {
 
     updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
+    }
+
+    getInitialCocktails() {
+        let stack = [];
+
+        for (let i = 0; i < this.state.stackSize; i++) {
+            stack.push(GetRandomCocktail());
+        }
+
+        Promise.all(stack).then((data) => {
+            this.setState({ cocktailStack: data });
+        });
     }
 
     render() {
