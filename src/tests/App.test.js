@@ -8,15 +8,23 @@ jest.mock('../components/DesktopDisplay', () => () => (
     <div data-testid="desktop-display" />
 ));
 
-describe('renders based on screen width', () => {
-    test('Mobile display', () => {
+describe('Renders based on screen width', () => {
+    test('mobile display on initial load', () => {
         global.innerWidth = 500;
         const { getByTestId } = render(<App />);
         expect(getByTestId(/mobile-display/)).toBeInTheDocument();
     });
-    test('Desktop display', () => {
+    test('desktop display', () => {
         global.innerWidth = 1200;
         const { getByTestId } = render(<App />);
+        expect(getByTestId(/desktop-display/)).toBeInTheDocument();
+    });
+    test('resize display', () => {
+        global.innerWidth = 100;
+        const { getByTestId } = render(<App />);
+        expect(getByTestId(/mobile-display/)).toBeInTheDocument();
+        global.innerWidth = 1200;
+        render(<App />);
         expect(getByTestId(/desktop-display/)).toBeInTheDocument();
     });
 });
