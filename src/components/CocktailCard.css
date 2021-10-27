@@ -1,7 +1,8 @@
 .card {
     font-family: 'Gothic A1', sans-serif;
-    max-width: 600px;
+    max-width: inherit;
     background-color: #fff;
+    padding-bottom: 80px;
 }
 
 .cardImg {
@@ -9,6 +10,7 @@
     position: relative;
     height: 0;
     overflow: hidden;
+    margin-top: 130px;
 }
 
 .cardImg__image {
