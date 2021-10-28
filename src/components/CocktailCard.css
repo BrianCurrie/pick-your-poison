@@ -1,6 +1,10 @@
 .card {
+    position: absolute;
+    top: 0;
+    left: 0;
     font-family: 'Gothic A1', sans-serif;
     max-width: inherit;
+    width: 100%;
     background-color: #fff;
     padding-bottom: 80px;
 }

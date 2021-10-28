@@ -11,8 +11,9 @@ class App extends Component {
             width: 0,
             height: 0,
             mobileWidthBreakpoint: 1000,
-            stackSize: 1,
+            stackSize: 3,
             cocktailStack: [],
+            likedCocktails: [],
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
     }
@@ -42,6 +43,16 @@ class App extends Component {
         Promise.all(stack).then((data) => {
             this.setState({ cocktailStack: data });
         });
+    }
+
+    likeCocktail() {
+        //Add current cocktail to likedCocktails arr
+        //Remove current cocktail from cocktail stack
+        //so we can display a new one
+    }
+
+    dislikeCocktail() {
+        //Remove current cocktail from stack, same as likeCocktail
     }
 
     render() {
