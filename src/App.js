@@ -79,6 +79,7 @@ class App extends Component {
                 dislike={this.dislikeCocktail}
                 like={this.likeCocktail}
                 stackSize={this.state.stackSize}
+                likedList={this.state.likedCocktails}
             />
         );
     }

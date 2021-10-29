@@ -1,0 +1,61 @@
+.likedList {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    max-width: inherit;
+    margin-top: 128px;
+    padding-bottom: 140px;
+    overflow-y: scroll;
+    z-index: 3;
+    background-color: #dddddd;
+}
+
+.cocktail {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: none;
+    border-bottom: 2px solid #cecece;
+    width: 100%;
+    cursor: pointer;
+    padding: 10px 20px;
+    margin-top: 10px;
+    text-align: left;
+}
+
+.cocktail__thumbnail {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    margin-right: 28px;
+    background: linear-gradient(125deg, #f03a3a, #9198e5);
+}
+
+.cocktail__thumbnail__img {
+    width: calc(100% - 6px);
+    height: auto;
+    border-radius: 100%;
+}
+
+.cocktail__info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.cocktail__info__name {
+    margin-bottom: 4px;
+    font-size: 20px;
+    color: #2e2e2e;
+}
+
+.cocktail__info__category {
+    font-size: 14px;
+    color: #2e2e2edc;
+}

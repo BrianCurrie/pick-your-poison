@@ -26,15 +26,15 @@
 .toggle__btn > div {
     display: flex;
     justify-content: center;
-    padding: 7px;
+    padding: 7px 0;
     border-radius: 20px;
 }
 
 .toggle__btn__on {
-    width: 70px;
+    width: 65px;
     background-color: #fff;
 }
 
 .toggle__btn__off {
-    width: 70px;
+    width: 65px;
 }

@@ -16,7 +16,7 @@
     position: relative;
     height: 0;
     overflow: hidden;
-    margin-top: 130px;
+    margin-top: 128px;
 }
 
 .cardImg__image {
@@ -43,7 +43,7 @@
 
 .cardInfo__name {
     font-size: 36px;
-    font-weight: 500;
+    font-weight: 400;
     margin: 15px 0;
 }
 
