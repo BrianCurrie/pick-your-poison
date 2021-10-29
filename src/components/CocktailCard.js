@@ -2,13 +2,15 @@ import './CocktailCard.css';
 
 export default function CocktailCard(props) {
     const data = props.cardInfo;
+    let increment = 0; // To make sure table row key is always unique
     return (
-        <div className="card">
+        <div className="card" style={{ zIndex: props.zIndex }}>
             <div className="cardImg fixed-ratio">
                 <img
                     className="cardImg__image"
                     src={data.image}
                     alt={data.name}
+                    onLoad={props.onCardLoad}
                 />
             </div>
             <div className="cardInfo">
@@ -23,7 +25,11 @@ export default function CocktailCard(props) {
                 <table className="ingredients">
                     <tbody className="ingredients__body">
                         {data.ingredients.map((ingredient) => (
-                            <tr key={`${ingredient[0] + ingredient[1]}`}>
+                            <tr
+                                key={`${
+                                    ingredient[0] + ingredient[1] + increment++
+                                }`}
+                            >
                                 <td>{ingredient[0]}</td>
                                 <td>{ingredient[1]}</td>
                             </tr>

@@ -16,6 +16,9 @@ class App extends Component {
             likedCocktails: [],
         };
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+        this.likeCocktail = this.likeCocktail.bind(this);
+        this.dislikeCocktail = this.dislikeCocktail.bind(this);
+        this.removeCurrentCocktail = this.removeCurrentCocktail.bind(this);
     }
 
     componentDidMount() {
@@ -46,20 +49,37 @@ class App extends Component {
     }
 
     likeCocktail() {
-        //Add current cocktail to likedCocktails arr
-        //Remove current cocktail from cocktail stack
-        //so we can display a new one
+        //Handle Duplicates
+        const currentCocktail = this.state.cocktailStack[0];
+        this.setState({
+            likedCocktails: [...this.state.likedCocktails, currentCocktail],
+        });
+        this.removeCurrentCocktail();
     }
 
     dislikeCocktail() {
-        //Remove current cocktail from stack, same as likeCocktail
+        this.removeCurrentCocktail();
+    }
+
+    removeCurrentCocktail() {
+        const stack = [...this.state.cocktailStack];
+        stack.shift();
+        GetRandomCocktail()
+            .then((cocktail) => stack.push(cocktail))
+            .then(() => this.setState({ cocktailStack: stack }));
     }
 
     render() {
+        console.log(this.state.likedCocktails);
         return this.state.width > this.state.mobileWidthBreakpoint ? (
             <DesktopDisplay />
         ) : (
-            <MobileDisplay cocktailStack={this.state.cocktailStack} />
+            <MobileDisplay
+                cocktailStack={this.state.cocktailStack}
+                dislike={this.dislikeCocktail}
+                like={this.likeCocktail}
+                stackSize={this.state.stackSize}
+            />
         );
     }
 }
