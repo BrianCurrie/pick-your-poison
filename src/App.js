@@ -49,11 +49,22 @@ class App extends Component {
     }
 
     likeCocktail() {
-        //Handle Duplicates
         const currentCocktail = this.state.cocktailStack[0];
-        this.setState({
-            likedCocktails: [...this.state.likedCocktails, currentCocktail],
-        });
+        const currentCocktailID = currentCocktail.id;
+        let isDuplicate = false;
+
+        for (let cocktail of this.state.likedCocktails) {
+            if (cocktail.id === currentCocktailID) {
+                isDuplicate = true;
+            }
+        }
+
+        if (!isDuplicate) {
+            this.setState({
+                likedCocktails: [...this.state.likedCocktails, currentCocktail],
+            });
+        }
+
         this.removeCurrentCocktail();
     }
 

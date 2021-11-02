@@ -1,11 +1,11 @@
 import CardVote from './CardVote';
 import ToggleView from './ToggleView';
 import Loading from './Loading';
-import style from './MobileSwipe.module.css';
+import mobile from './MainMobile.module.css';
 
 export default function MobileSwipe(props) {
     return (
-        <div className={style.swipe_view}>
+        <div className={mobile.container}>
             {props.isLoading ? <Loading /> : null}
             <ToggleView
                 display={props.display}

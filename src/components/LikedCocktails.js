@@ -2,7 +2,13 @@ import style from './LikedCocktails.module.css';
 
 export default function LikedCocktails(props) {
     const btns = props.likedList.map((cocktail) => (
-        <button className={style.cocktail} key={cocktail.name}>
+        <button
+            className={style.cocktail}
+            key={cocktail.name}
+            onClick={() => {
+                props.onLikedBtnClick(cocktail);
+            }}
+        >
             <div className={style.thumbnail}>
                 <img
                     className={style.thumbnail_image}

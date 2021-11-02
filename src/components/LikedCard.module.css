@@ -1,0 +1,27 @@
+.backBtn {
+    position: absolute;
+    z-index: 10;
+    bottom: 25px;
+    right: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 55px;
+    width: 55px;
+
+    border: none;
+    border-radius: 100%;
+    box-shadow: 0px 2px 5px 3px #00000034;
+    background-color: #fff;
+
+    cursor: pointer;
+}
+
+.backBtn:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.backBtn_img {
+    padding-right: 3px;
+}
