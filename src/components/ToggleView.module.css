@@ -1,40 +1,46 @@
 .toggle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     position: fixed;
     top: 0;
     left: 0;
-    max-width: inherit;
+    z-index: 10;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
+    max-width: inherit;
     padding: 60px 0 20px 0;
+
     background-color: #fff;
     border-bottom: 2px solid #cecece;
-    z-index: 10;
 }
 
-.toggle__btn {
+.btn {
     display: flex;
+    padding: 3px;
+
     border: none;
+    border-radius: 20px;
     background-color: #aeaeae;
     box-shadow: 0px 2px 5px 3px #00000034;
-    padding: 3px;
-    border-radius: 20px;
+
     cursor: pointer;
 }
 
-.toggle__btn > div {
+.btn > div {
     display: flex;
     justify-content: center;
     padding: 7px 0;
+
     border-radius: 20px;
 }
 
-.toggle__btn__on {
+.btn_on {
     width: 65px;
+
     background-color: #fff;
 }
 
-.toggle__btn__off {
+.btn_off {
     width: 65px;
 }

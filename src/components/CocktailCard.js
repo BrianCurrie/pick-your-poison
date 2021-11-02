@@ -1,29 +1,29 @@
-import './CocktailCard.css';
+import style from './CocktailCard.module.css';
 
 export default function CocktailCard(props) {
     const data = props.cardInfo;
     let increment = 0; // To make sure table row key is always unique
     return (
-        <div className="card" style={{ zIndex: props.zIndex }}>
-            <div className="cardImg fixed-ratio">
+        <div className={style.card} style={{ zIndex: props.zIndex }}>
+            <div className={(style.image_container, style.fixed_ratio)}>
                 <img
-                    className="cardImg__image"
+                    className={style.image}
                     src={data.image}
                     alt={data.name}
                     onLoad={props.onCardLoad}
                 />
             </div>
-            <div className="cardInfo">
-                <h2 className="cardInfo__name">{data.name}</h2>
-                <div className="cardTags">
-                    <div className="cardTags__tag">{data.category}</div>
-                    <div className="cardTags__tag">
+            <div className={style.info}>
+                <h2 className={style.name}>{data.name}</h2>
+                <div className={style.tag_container}>
+                    <div className={style.tag}>{data.category}</div>
+                    <div className={style.tag}>
                         {data.alcoholic ? 'Alcoholic' : 'Non-Alcoholic'}
                     </div>
-                    <div className="cardTags__tag">{data.glass}</div>
+                    <div className={style.tag}>{data.glass}</div>
                 </div>
-                <table className="ingredients">
-                    <tbody className="ingredients__body">
+                <table className={style.ingredients_table}>
+                    <tbody className={style.ingredients_body}>
                         {data.ingredients.map((ingredient) => (
                             <tr
                                 key={`${
@@ -36,9 +36,11 @@ export default function CocktailCard(props) {
                         ))}
                     </tbody>
                 </table>
-                <div className="instructions">
-                    <h3 className="instructions__title">Instructions</h3>
-                    <p className="instructions__body">{data.instructions}</p>
+                <div className={style.instructions_container}>
+                    <h3 className={style.instructions_header}>Instructions</h3>
+                    <p className={style.instructions_body}>
+                        {data.instructions}
+                    </p>
                 </div>
             </div>
         </div>

@@ -1,15 +1,15 @@
 import dislikeImg from '../images/dislike.png';
 import likeImg from '../images/like.png';
-import './CardVote.css';
+import style from './CardVote.module.css';
 
 export default function CardVote(props) {
     return (
-        <div className="vote">
-            <div className="vote__btns">
-                <button className="vote__btns__btn" onClick={props.dislike}>
+        <div className={style.container}>
+            <div className={style.btn_container}>
+                <button className={style.btn} onClick={props.dislike}>
                     <img src={dislikeImg} alt="dislike" />
                 </button>
-                <button className="vote__btns__btn" onClick={props.like}>
+                <button className={style.btn} onClick={props.like}>
                     <img src={likeImg} alt="like" />
                 </button>
             </div>

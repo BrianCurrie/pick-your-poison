@@ -2,93 +2,111 @@
     position: absolute;
     top: 0;
     left: 0;
-    font-family: 'Gothic A1', sans-serif;
-    max-width: inherit;
-    width: 100%;
+
     height: 100%;
+    width: 100%;
+    max-width: inherit;
+
+    font-family: 'Gothic A1', sans-serif;
+
     background-color: #fff;
     padding-bottom: 80px;
+
     overflow-y: scroll;
 }
 
-.cardImg {
-    display: block;
+.image_container {
     position: relative;
+
+    display: block;
     height: 0;
+
     overflow: hidden;
-    margin-top: 128px;
 }
 
-.cardImg__image {
+.image {
     position: absolute;
     top: 0;
     left: 0;
+
+    height: auto;
     width: 100%;
-    height: 100%;
     max-width: inherit;
+    margin-top: 128px;
 }
 
-.fixed-ratio {
+.fixed_ratio {
     /* ratio: 100% / (1 / 1) = */
     padding-bottom: 100%;
 }
 
-.cardInfo {
+.info {
     position: relative;
     bottom: 20px;
+
     padding: 20px 40px 20px 40px;
+    margin-top: 128px;
+
     border-radius: 20px 20px 0 0;
     background-color: #fff;
 }
 
-.cardInfo__name {
+.name {
+    margin: 15px 0;
+
     font-size: 36px;
     font-weight: 400;
-    margin: 15px 0;
 }
 
-.cardTags {
+.tag_container {
     display: flex;
     flex-wrap: wrap;
 }
 
-.cardTags__tag {
+.tag {
     width: fit-content;
     padding: 5px 10px;
     margin: 5px 5px 0 0;
+
+    font-size: 14px;
+
     border-radius: 20px;
     background-color: #f03a3a;
     color: #fff;
-    font-size: 14px;
 }
 
-.ingredients {
+.ingredients_table {
     width: 100%;
     margin-top: 30px;
+
     font-size: 18px;
 }
 
-.ingredients__body > tr > td {
+.ingredients_body > tr > td {
     padding-bottom: 5px;
 }
 
-.ingredients__body > tr > td:nth-child(2) {
+.ingredients_body > tr > td:nth-child(2) {
     text-align: right;
+
     color: #636363;
 }
 
-.instructions {
+.instructions_container {
     margin-top: 30px;
 }
 
-.instructions__title {
+.instructions_header {
+    margin: 0 0 20px 0;
+
     font-size: 24px;
     font-weight: 500;
-    margin: 0 0 20px 0;
+
     color: #2e2e2e;
 }
 
-.instructions__body {
+.instructions_body {
     font-size: 18px;
+
     color: #636363;
 }

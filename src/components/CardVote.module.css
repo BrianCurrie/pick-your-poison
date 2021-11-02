@@ -1,35 +1,39 @@
-.vote {
-    display: flex;
-    max-width: inherit;
-    width: 100%;
+.container {
     position: fixed;
     bottom: 0px;
     left: 0px;
     z-index: 10;
+
+    display: flex;
+    width: 100%;
+    max-width: inherit;
 }
 
-.vote__btns {
+.btn_container {
     display: flex;
     flex: 0 0 100%;
     justify-content: center;
     padding: 20px;
+
     background-color: #fff;
     border-top: 2px solid #cecece;
 }
 
-.vote__btns__btn {
+.btn {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0 30px;
+    padding: 15px;
+
     border: none;
     border-radius: 100%;
-    padding: 15px;
     box-shadow: 0px 2px 5px 3px #00000034;
     background-color: inherit;
-    margin: 0 30px;
+
     cursor: pointer;
 }
 
-.vote__btns__btn:hover {
+.btn:hover {
     background-color: rgb(241, 241, 241);
 }

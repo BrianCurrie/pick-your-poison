@@ -1,10 +1,12 @@
 .loading {
+    position: relative;
+    z-index: 15;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    position: relative;
     height: 100%;
     width: 100%;
-    z-index: 15;
+
     background-color: #fff;
 }
