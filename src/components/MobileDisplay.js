@@ -1,10 +1,7 @@
 import { Component } from 'react';
 import CocktailCard from './CocktailCard';
-import CardVote from './CardVote';
-import ToggleView from './ToggleView';
-import Loading from './Loading';
-import LikedCocktails from './LikedCocktails';
-import './MobileDisplay.css';
+import MobileSwipe from './MobileSwipe';
+import MobileLiked from './MobileLiked';
 
 export default class MobileDisplay extends Component {
     constructor(props) {
@@ -36,7 +33,7 @@ export default class MobileDisplay extends Component {
 
     render() {
         let zIndex = 3;
-        const cocktails = [...this.props.cocktailStack].map((drink) => (
+        const cocktailCards = [...this.props.cocktailStack].map((drink) => (
             <CocktailCard
                 key={drink.id}
                 cardInfo={drink}
@@ -45,35 +42,23 @@ export default class MobileDisplay extends Component {
             />
         ));
 
-        let content;
-        if (this.state.display === 'cocktails') {
-            content = (
-                <div className="mobileDisplay">
-                    {this.state.loading ? <Loading /> : null}
-                    <ToggleView
-                        display={this.state.display}
-                        onToggleViewClick={this.onToggleViewClick}
-                    />
-                    {cocktails}
-                    <CardVote
-                        dislike={this.props.dislike}
-                        like={this.props.like}
-                    />
-                </div>
-            );
-        } else {
-            content = (
-                <div className="mobileDisplay">
-                    {this.state.loading ? <Loading /> : null}
-                    <ToggleView
-                        display={this.state.display}
-                        onToggleViewClick={this.onToggleViewClick}
-                    />
-                    <LikedCocktails likedList={this.props.likedList} />
-                </div>
-            );
-        }
-
-        return content;
+        return this.state.display === 'cocktails' ? (
+            <MobileSwipe
+                isLoading={this.state.loading}
+                display={this.state.display}
+                onToggleViewClick={this.onToggleViewClick}
+                likedList={this.props.likedList}
+                cocktailCards={cocktailCards}
+                dislike={this.props.dislike}
+                like={this.props.like}
+            />
+        ) : (
+            <MobileLiked
+                isLoading={this.state.loading}
+                display={this.state.display}
+                onToggleViewClick={this.onToggleViewClick}
+                likedList={this.props.likedList}
+            />
+        );
     }
 }

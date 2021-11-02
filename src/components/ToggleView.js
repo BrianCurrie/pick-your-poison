@@ -13,10 +13,10 @@ export default function ToggleView(props) {
                     onClick={props.onToggleViewClick}
                 >
                     <div className="toggle__btn__on">
-                        <img src={drink_red} alt="toggle" />
+                        <img src={drink_red} alt="toggle drink" />
                     </div>
                     <div className="toggle__btn__off">
-                        <img src={bookmark_gray} alt="toggle" />
+                        <img src={bookmark_gray} alt="toggle bookmark" />
                     </div>
                 </button>
             </div>
@@ -29,10 +29,10 @@ export default function ToggleView(props) {
                     onClick={props.onToggleViewClick}
                 >
                     <div className="toggle__btn__off">
-                        <img src={drink_gray} alt="toggle" />
+                        <img src={drink_gray} alt="toggle drink" />
                     </div>
                     <div className="toggle__btn__on">
-                        <img src={bookmark_red} alt="toggle" />
+                        <img src={bookmark_red} alt="toggle bookmark" />
                     </div>
                 </button>
             </div>
