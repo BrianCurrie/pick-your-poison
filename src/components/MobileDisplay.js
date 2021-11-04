@@ -52,6 +52,7 @@ export default class MobileDisplay extends Component {
                 cardInfo={drink}
                 zIndex={zIndex--}
                 onCardLoad={this.onCardLoad}
+                swiping={true}
             />
         ));
 

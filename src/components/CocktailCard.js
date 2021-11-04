@@ -1,3 +1,4 @@
+import Meatballs from './Meatballs';
 import style from './CocktailCard.module.css';
 
 export default function CocktailCard(props) {
@@ -5,6 +6,7 @@ export default function CocktailCard(props) {
     let increment = 0; // To make sure table row key is always unique
     return (
         <div className={style.card} style={{ zIndex: props.zIndex }}>
+            {props.swiping !== true ? <Meatballs /> : null}
             <div className={(style.image_container, style.fixed_ratio)}>
                 <img
                     className={style.image}

@@ -85,10 +85,7 @@ class App extends Component {
                     ],
                 },
                 () => {
-                    localStorage.setItem(
-                        'likedCocktails',
-                        JSON.stringify(this.state.likedCocktails)
-                    );
+                    this.updateLocalStorage();
                 }
             );
         }
@@ -98,6 +95,13 @@ class App extends Component {
 
     dislikeCocktail() {
         this.removeCurrentCocktail();
+    }
+
+    updateLocalStorage() {
+        localStorage.setItem(
+            'likedCocktails',
+            JSON.stringify(this.state.likedCocktails)
+        );
     }
 
     removeCurrentCocktail() {
