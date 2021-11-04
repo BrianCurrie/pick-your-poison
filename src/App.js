@@ -26,6 +26,8 @@ class App extends Component {
 
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
+
+        this.loadLocalStorage();
     }
 
     componentWillUnmount() {
@@ -48,6 +50,21 @@ class App extends Component {
         });
     }
 
+    loadLocalStorage() {
+        try {
+            this.setState({
+                likedCocktails: localStorage.getItem('likedCocktails')
+                    ? JSON.parse(localStorage.getItem('likedCocktails'))
+                    : [],
+            });
+        } catch (err) {
+            console.log(err);
+            this.setState({
+                likedCocktails: [],
+            });
+        }
+    }
+
     likeCocktail() {
         const currentCocktail = this.state.cocktailStack[0];
         const currentCocktailID = currentCocktail.id;
@@ -60,9 +77,20 @@ class App extends Component {
         }
 
         if (!isDuplicate) {
-            this.setState({
-                likedCocktails: [...this.state.likedCocktails, currentCocktail],
-            });
+            this.setState(
+                {
+                    likedCocktails: [
+                        ...this.state.likedCocktails,
+                        currentCocktail,
+                    ],
+                },
+                () => {
+                    localStorage.setItem(
+                        'likedCocktails',
+                        JSON.stringify(this.state.likedCocktails)
+                    );
+                }
+            );
         }
 
         this.removeCurrentCocktail();
@@ -81,7 +109,6 @@ class App extends Component {
     }
 
     render() {
-        console.log(this.state.likedCocktails);
         return this.state.width > this.state.mobileWidthBreakpoint ? (
             <DesktopDisplay />
         ) : (
