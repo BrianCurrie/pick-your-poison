@@ -55,10 +55,10 @@ export default class Meatballs extends Component {
                     <button
                         className={style.delete_btn}
                         onClick={() => {
-                            console.log('Deleting');
+                            this.props.deleteCocktail(this.props.cocktail.id);
                         }}
                     >
-                        Remove
+                        Delete
                     </button>
                 ) : null}
             </div>

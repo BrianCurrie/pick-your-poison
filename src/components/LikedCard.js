@@ -11,7 +11,11 @@ export default function LikedCard(props) {
                 display={props.display}
                 onToggleViewClick={props.onToggleViewClick}
             />
-            <CocktailCard cardInfo={props.cardInfo} zIndex="3" />
+            <CocktailCard
+                cardInfo={props.cardInfo}
+                zIndex="3"
+                deleteCocktail={props.deleteCocktail}
+            />
             <button className={style.backBtn} onClick={props.onBackBtnClick}>
                 <img className={style.backBtn_img} src={back} alt="back" />
             </button>

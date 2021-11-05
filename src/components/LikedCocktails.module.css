@@ -69,3 +69,33 @@
 
     color: #2e2e2edc;
 }
+
+.empty_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 128px;
+    width: 100%;
+
+    font-family: 'Gothic A1', sans-serif;
+    text-align: center;
+}
+
+.empty_text {
+    max-width: 200px;
+}
+
+.empty_header {
+    margin: 15px 0;
+
+    color: #333;
+    font-weight: 600;
+    font-size: 28px;
+}
+
+.empty_subtext {
+    color: #717171;
+    font-weight: 400;
+    font-size: 18px;
+}

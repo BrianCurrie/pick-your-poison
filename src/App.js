@@ -19,6 +19,7 @@ class App extends Component {
         this.likeCocktail = this.likeCocktail.bind(this);
         this.dislikeCocktail = this.dislikeCocktail.bind(this);
         this.removeCurrentCocktail = this.removeCurrentCocktail.bind(this);
+        this.deleteCocktail = this.deleteCocktail.bind(this);
     }
 
     componentDidMount() {
@@ -65,6 +66,13 @@ class App extends Component {
         }
     }
 
+    updateLocalStorage() {
+        localStorage.setItem(
+            'likedCocktails',
+            JSON.stringify(this.state.likedCocktails)
+        );
+    }
+
     likeCocktail() {
         const currentCocktail = this.state.cocktailStack[0];
         const currentCocktailID = currentCocktail.id;
@@ -97,10 +105,17 @@ class App extends Component {
         this.removeCurrentCocktail();
     }
 
-    updateLocalStorage() {
-        localStorage.setItem(
-            'likedCocktails',
-            JSON.stringify(this.state.likedCocktails)
+    deleteCocktail(id) {
+        console.log('deleting: ID - ' + id);
+        this.setState(
+            {
+                likedCocktails: this.state.likedCocktails.filter(
+                    (cocktail) => cocktail.id !== id
+                ),
+            },
+            () => {
+                this.updateLocalStorage();
+            }
         );
     }
 
@@ -122,6 +137,7 @@ class App extends Component {
                 like={this.likeCocktail}
                 stackSize={this.state.stackSize}
                 likedList={this.state.likedCocktails}
+                deleteCocktail={this.deleteCocktail}
             />
         );
     }

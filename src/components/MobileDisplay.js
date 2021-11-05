@@ -17,6 +17,7 @@ export default class MobileDisplay extends Component {
         this.onToggleViewClick = this.onToggleViewClick.bind(this);
         this.onLikedBtnClick = this.onLikedBtnClick.bind(this);
         this.onBackBtnClick = this.onBackBtnClick.bind(this);
+        this.onDeleteCocktail = this.onDeleteCocktail.bind(this);
     }
 
     onCardLoad() {
@@ -41,6 +42,11 @@ export default class MobileDisplay extends Component {
     }
 
     onBackBtnClick() {
+        this.setState({ display: 'cocktailList' });
+    }
+
+    onDeleteCocktail(id) {
+        this.props.deleteCocktail(id);
         this.setState({ display: 'cocktailList' });
     }
 
@@ -86,6 +92,7 @@ export default class MobileDisplay extends Component {
                         onToggleViewClick={this.onToggleViewClick}
                         onBackBtnClick={this.onBackBtnClick}
                         cardInfo={this.state.displayCocktail}
+                        deleteCocktail={this.onDeleteCocktail}
                     />
                 );
             default:

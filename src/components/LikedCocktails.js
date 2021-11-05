@@ -1,3 +1,4 @@
+import icon from '../images/empty_list_icon.png';
 import style from './LikedCocktails.module.css';
 
 export default function LikedCocktails(props) {
@@ -23,5 +24,19 @@ export default function LikedCocktails(props) {
         </button>
     ));
 
-    return <div className={style.list}>{btns}</div>;
+    const listEmpty = (
+        <div className={style.empty_container}>
+            <img src={icon} alt="Empty cocktail list icon" />
+            <div className={style.empty_text}>
+                <h2 className={style.empty_header}>Start Swiping</h2>
+                <h3 className={style.empty_subtext}>
+                    Your liked drinks will appear here
+                </h3>
+            </div>
+        </div>
+    );
+
+    return (
+        <div className={style.list}>{btns.length !== 0 ? btns : listEmpty}</div>
+    );
 }

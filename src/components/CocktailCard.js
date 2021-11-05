@@ -6,7 +6,12 @@ export default function CocktailCard(props) {
     let increment = 0; // To make sure table row key is always unique
     return (
         <div className={style.card} style={{ zIndex: props.zIndex }}>
-            {props.swiping !== true ? <Meatballs /> : null}
+            {props.swiping !== true ? (
+                <Meatballs
+                    cocktail={data}
+                    deleteCocktail={props.deleteCocktail}
+                />
+            ) : null}
             <div className={(style.image_container, style.fixed_ratio)}>
                 <img
                     className={style.image}
