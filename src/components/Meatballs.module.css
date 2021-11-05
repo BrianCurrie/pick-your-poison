@@ -21,19 +21,19 @@
 
     padding: 5px 10px;
 
-    background-color: #fff;
+    background-color: #f03a3a;
     border: none;
-    border-radius: 3px;
+    border-radius: 10px;
     box-shadow: 0px 2px 5px 3px #00000034;
 
     font-family: 'Gothic A1', sans-serif;
     font-size: 20px;
     font-weight: 500;
-    color: #f03a3a;
+    color: #fff;
 
     cursor: pointer;
 }
 
 .delete_btn:hover {
-    background-color: rgb(241, 241, 241);
+    background-color: #ee2b2b;
 }
