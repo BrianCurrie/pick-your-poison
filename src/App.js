@@ -2,7 +2,6 @@ import { React, Component } from 'react';
 import MobileDisplay from './components/MobileDisplay';
 import DesktopDisplay from './components/DesktopDisplay';
 import GetRandomCocktail from './api/GetRandomCocktail';
-import './App.css';
 
 class App extends Component {
     constructor() {

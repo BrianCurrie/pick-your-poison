@@ -10,14 +10,14 @@ export default function LikedNav(props) {
 
     return (
         <div className={style.container}>
-            <button className={`${style.liked} ${style.btn}`}>
+            <div className={`${style.liked} ${style.info_container}`}>
                 <img src={heart} alt="Liked" />
                 <span className={style.number}>{totalLiked}</span>
-            </button>
-            <button className={`${style.favorited} ${style.btn}`}>
+            </div>
+            <div className={`${style.favorited} ${style.info_container}`}>
                 <img src={star} alt="Favorited" />
                 <span className={style.number}>{totalFavorited}</span>
-            </button>
+            </div>
         </div>
     );
 }
