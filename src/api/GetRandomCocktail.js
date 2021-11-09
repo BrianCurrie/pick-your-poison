@@ -1,6 +1,6 @@
 export default async function GetRandomCocktail() {
     let data = await fetch(
-        'http://www.thecocktaildb.com/api/json/v1/1/random.php',
+        'https://www.thecocktaildb.com/api/json/v1/1/random.php',
         {
             mode: 'cors',
         }
