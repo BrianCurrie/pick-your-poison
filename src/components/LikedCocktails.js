@@ -10,7 +10,13 @@ export default function LikedCocktails(props) {
                 props.onLikedBtnClick(cocktail);
             }}
         >
-            <div className={style.thumbnail}>
+            <div
+                className={
+                    cocktail.favorite
+                        ? style.thumbnail_favorte
+                        : style.thumbnail
+                }
+            >
                 <img
                     className={style.thumbnail_image}
                     src={cocktail.thumbnail}

@@ -71,8 +71,9 @@ export default class MobileDisplay extends Component {
                         onToggleViewClick={this.onToggleViewClick}
                         likedList={this.props.likedList}
                         cocktailCards={cocktailCards}
-                        dislike={this.props.dislike}
                         like={this.props.like}
+                        dislike={this.props.dislike}
+                        favorite={this.props.favorite}
                     />
                 );
             case 'cocktailList':

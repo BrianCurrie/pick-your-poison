@@ -12,7 +12,11 @@ export default function MobileSwipe(props) {
                 onToggleViewClick={props.onToggleViewClick}
             />
             {props.cocktailCards}
-            <CardVote dislike={props.dislike} like={props.like} />
+            <CardVote
+                like={props.like}
+                dislike={props.dislike}
+                favorite={props.favorite}
+            />
         </div>
     );
 }

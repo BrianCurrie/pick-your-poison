@@ -18,6 +18,7 @@ class App extends Component {
         this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
         this.likeCocktail = this.likeCocktail.bind(this);
         this.dislikeCocktail = this.dislikeCocktail.bind(this);
+        this.favoriteCocktail = this.favoriteCocktail.bind(this);
         this.removeCurrentCocktail = this.removeCurrentCocktail.bind(this);
         this.deleteCocktail = this.deleteCocktail.bind(this);
     }
@@ -105,6 +106,16 @@ class App extends Component {
         this.removeCurrentCocktail();
     }
 
+    favoriteCocktail() {
+        let cocktailStack = this.state.cocktailStack;
+        console.log('favoriting: ' + cocktailStack[0].name);
+        cocktailStack[0].favorite = true;
+
+        this.setState({ cocktailStack: cocktailStack }, () => {
+            this.likeCocktail();
+        });
+    }
+
     deleteCocktail(id) {
         console.log('deleting: ID - ' + id);
         this.setState(
@@ -133,8 +144,9 @@ class App extends Component {
         ) : (
             <MobileDisplay
                 cocktailStack={this.state.cocktailStack}
-                dislike={this.dislikeCocktail}
                 like={this.likeCocktail}
+                dislike={this.dislikeCocktail}
+                favorite={this.favoriteCocktail}
                 stackSize={this.state.stackSize}
                 likedList={this.state.likedCocktails}
                 deleteCocktail={this.deleteCocktail}

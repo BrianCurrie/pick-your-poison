@@ -31,5 +31,6 @@ export default async function GetRandomCocktail() {
         tags: data.strTags,
         alcoholic: data.strAlcoholic === 'Alcoholic' ? true : false,
         id: data.idDrink,
+        favorite: false,
     };
 }
