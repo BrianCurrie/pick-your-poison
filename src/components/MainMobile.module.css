@@ -1,5 +1,13 @@
 .container {
     position: relative;
-    height: 100vh;
+    height: 100%;
     max-width: 500px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .container {
+        position: relative;
+        height: 100vh;
+        max-width: 500px;
+    }
 }

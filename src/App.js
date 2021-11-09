@@ -139,7 +139,15 @@ class App extends Component {
 
     render() {
         return this.state.width > this.state.mobileWidthBreakpoint ? (
-            <DesktopDisplay />
+            <DesktopDisplay
+                cocktailStack={this.state.cocktailStack}
+                like={this.likeCocktail}
+                dislike={this.dislikeCocktail}
+                favorite={this.favoriteCocktail}
+                stackSize={this.state.stackSize}
+                likedList={this.state.likedCocktails}
+                deleteCocktail={this.deleteCocktail}
+            />
         ) : (
             <MobileDisplay
                 cocktailStack={this.state.cocktailStack}

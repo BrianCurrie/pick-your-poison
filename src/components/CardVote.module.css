@@ -1,5 +1,5 @@
 .container {
-    position: fixed;
+    position: absolute;
     bottom: 0px;
     left: 0px;
     z-index: 10;
