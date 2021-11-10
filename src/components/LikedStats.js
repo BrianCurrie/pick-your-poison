@@ -1,6 +1,6 @@
-import style from './LikedNav.module.css';
+import style from './LikedStats.module.css';
 import heart from '../images/liked_heart.png';
-import star from '../images/favorited_star.png';
+import star from '../images/favorite.svg';
 
 export default function LikedNav(props) {
     const totalLiked = props.liked.length;

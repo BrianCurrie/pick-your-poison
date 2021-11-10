@@ -1,7 +1,7 @@
 import ToggleView from './ToggleView';
 import Loading from './Loading';
 import LikedCocktails from './LikedCocktails';
-import LikedNav from './LikedNav';
+import LikedStats from './LikedStats';
 import mobile from './MainMobile.module.css';
 
 export default function MobileLiked(props) {
@@ -16,7 +16,7 @@ export default function MobileLiked(props) {
                 likedList={props.likedList}
                 onLikedBtnClick={props.onLikedBtnClick}
             />
-            <LikedNav liked={props.likedList} />
+            <LikedStats liked={props.likedList} />
         </div>
     );
 }

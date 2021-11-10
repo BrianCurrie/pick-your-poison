@@ -34,6 +34,16 @@
     color: #f36161;
 }
 
+.liked > img {
+    height: 32px;
+    width: auto;
+}
+
 .favorited {
-    color: #a7adeb;
+    color: #3bc1fa;
+}
+
+.favorited > img {
+    height: 32px;
+    width: auto;
 }
