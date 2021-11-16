@@ -111,3 +111,28 @@
 
     color: #636363;
 }
+
+.share_btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4px;
+
+    background-color: #fff;
+    border: 2px solid #cecece;
+    border-radius: 5px;
+
+    font-size: 18px;
+    font-weight: 400;
+
+    cursor: pointer;
+}
+
+.share_btn:hover {
+    background-color: #f5f5f5;
+}
+
+.share_Img {
+    height: 20px;
+    margin-right: 4px;
+}

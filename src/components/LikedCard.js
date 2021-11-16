@@ -15,6 +15,10 @@ export default function LikedCard(props) {
                 cardInfo={props.cardInfo}
                 zIndex="3"
                 deleteCocktail={props.deleteCocktail}
+                openShareModal={props.openShareModal}
+                closeShareModal={props.closeShareModal}
+                shareModalIsOpen={props.shareModalIsOpen}
+                isMainDisplayCard={props.isMainDisplayCard}
             />
             <button className={style.backBtn} onClick={props.onBackBtnClick}>
                 <img className={style.backBtn_img} src={back} alt="back" />

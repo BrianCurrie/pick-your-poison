@@ -1,4 +1,6 @@
 import Meatballs from './Meatballs';
+import ShareModal from './ShareModal';
+import shareImg from '../images/share.svg';
 import style from './CocktailCard.module.css';
 
 export default function CocktailCard(props) {
@@ -49,7 +51,26 @@ export default function CocktailCard(props) {
                         {data.instructions}
                     </p>
                 </div>
+                <button
+                    className={style.share_btn}
+                    onClick={() => {
+                        props.openShareModal();
+                    }}
+                >
+                    <img
+                        className={style.share_Img}
+                        src={shareImg}
+                        alt="share"
+                    />
+                    Share
+                </button>
             </div>
+            <ShareModal
+                shareModalIsOpen={props.shareModalIsOpen}
+                closeShareModal={props.closeShareModal}
+                isMainDisplayCard={props.isMainDisplayCard}
+                cardInfo={data}
+            />
         </div>
     );
 }

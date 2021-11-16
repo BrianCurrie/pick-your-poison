@@ -12,12 +12,15 @@ export default class MobileDisplay extends Component {
             loading: true,
             display: 'cocktails', //cocktails, cocktailList, cocktailLiked
             displayCocktail: null,
+            shareModalIsOpen: false,
         };
         this.onCardLoad = this.onCardLoad.bind(this);
         this.onToggleViewClick = this.onToggleViewClick.bind(this);
         this.onLikedBtnClick = this.onLikedBtnClick.bind(this);
         this.onBackBtnClick = this.onBackBtnClick.bind(this);
         this.onDeleteCocktail = this.onDeleteCocktail.bind(this);
+        this.openShareModal = this.openShareModal.bind(this);
+        this.closeShareModal = this.closeShareModal.bind(this);
     }
 
     onCardLoad() {
@@ -50,17 +53,31 @@ export default class MobileDisplay extends Component {
         this.setState({ display: 'cocktailList' });
     }
 
+    openShareModal() {
+        this.setState({ shareModalIsOpen: true });
+    }
+
+    closeShareModal() {
+        this.setState({ shareModalIsOpen: false });
+    }
+
     render() {
         let zIndex = 3;
-        const cocktailCards = [...this.props.cocktailStack].map((drink) => (
-            <CocktailCard
-                key={drink.id}
-                cardInfo={drink}
-                zIndex={zIndex--}
-                onCardLoad={this.onCardLoad}
-                swiping={true}
-            />
-        ));
+        const cocktailCards = [...this.props.cocktailStack].map(
+            (drink, index) => (
+                <CocktailCard
+                    key={drink.id}
+                    cardInfo={drink}
+                    zIndex={zIndex--}
+                    onCardLoad={this.onCardLoad}
+                    swiping={true}
+                    openShareModal={this.openShareModal}
+                    closeShareModal={this.closeShareModal}
+                    shareModalIsOpen={this.state.shareModalIsOpen}
+                    isMainDisplayCard={index === 0 ? true : false}
+                />
+            )
+        );
 
         switch (this.state.display) {
             case 'cocktails':
@@ -94,6 +111,10 @@ export default class MobileDisplay extends Component {
                         onBackBtnClick={this.onBackBtnClick}
                         cardInfo={this.state.displayCocktail}
                         deleteCocktail={this.onDeleteCocktail}
+                        openShareModal={this.openShareModal}
+                        closeShareModal={this.closeShareModal}
+                        shareModalIsOpen={this.state.shareModalIsOpen}
+                        isMainDisplayCard={true}
                     />
                 );
             default:
