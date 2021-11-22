@@ -1,11 +1,11 @@
 import { React, Component } from 'react';
 import MobileDisplay from './components/MobileDisplay';
 import DesktopDisplay from './components/DesktopDisplay';
-import GetRandomCocktail from './api/GetRandomCocktail';
+import GetCocktail from './api/GetCocktail';
 
 class App extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             width: 0,
             height: 0,
@@ -42,8 +42,15 @@ class App extends Component {
     getInitialCocktails() {
         let stack = [];
 
+        if (this.props.share) {
+            const urlStr = window.location.search;
+            const searchParams = new URLSearchParams(urlStr);
+            const drinkId = searchParams.get('c');
+            stack.push(GetCocktail(drinkId));
+        }
+
         for (let i = 0; i < this.state.stackSize; i++) {
-            stack.push(GetRandomCocktail());
+            stack.push(GetCocktail());
         }
 
         Promise.all(stack).then((data) => {
@@ -132,7 +139,7 @@ class App extends Component {
     removeCurrentCocktail() {
         const stack = [...this.state.cocktailStack];
         stack.shift();
-        GetRandomCocktail()
+        GetCocktail()
             .then((cocktail) => stack.push(cocktail))
             .then(() => this.setState({ cocktailStack: stack }));
     }

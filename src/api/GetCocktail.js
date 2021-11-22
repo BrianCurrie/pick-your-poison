@@ -1,12 +1,26 @@
-export default async function GetRandomCocktail() {
-    let data = await fetch(
-        'https://www.thecocktaildb.com/api/json/v1/1/random.php',
-        {
-            mode: 'cors',
-        }
-    )
-        .then((response) => response.json())
-        .then((drinkData) => drinkData.drinks[0]);
+export default async function GetCocktail(id) {
+    let data;
+
+    if (id === undefined) {
+        data = await fetch(
+            'https://www.thecocktaildb.com/api/json/v1/1/random.php',
+            {
+                mode: 'cors',
+            }
+        )
+            .then((response) => response.json())
+            .then((drinkData) => drinkData.drinks[0]);
+    } else {
+        data = await fetch(
+            `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${id}`,
+            {
+                mode: 'cors',
+            }
+        )
+            .then((response) => response.json())
+            .then((drinkData) => drinkData.drinks[0]);
+    }
+
     let ingredients = [];
 
     // Ingredients and their corresponding measurements are saved as

@@ -63,6 +63,10 @@ const handleFocus = (e) => {
 };
 
 export default function ShareModal(props) {
+    const link = `${window.location.protocol}//${window.location.host}/${
+        window.location.pathname.split('/')[1]
+    }/share?c=${props.cardInfo.id}`;
+
     return props.isMainDisplayCard ? (
         <Modal
             isOpen={props.shareModalIsOpen}
@@ -84,7 +88,7 @@ export default function ShareModal(props) {
             <div style={customStyles.urlContainer}>
                 <input
                     style={customStyles.link}
-                    value={`${window.location.href}/share?c=${props.cardInfo.id}`}
+                    value={link}
                     autoFocus
                     onFocus={(e) => handleFocus(e)}
                     readOnly
@@ -92,9 +96,7 @@ export default function ShareModal(props) {
                 <button
                     style={customStyles.copy}
                     onClick={(e) => {
-                        navigator.clipboard.writeText(
-                            `${window.location.href}/share?c=${props.cardInfo.id}`
-                        );
+                        navigator.clipboard.writeText(link);
                         e.target.innerText = 'Copied!';
                     }}
                 >
