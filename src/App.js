@@ -42,9 +42,10 @@ class App extends Component {
     getInitialCocktails() {
         let stack = [];
 
-        if (this.props.share) {
-            const urlStr = window.location.search;
-            const searchParams = new URLSearchParams(urlStr);
+        const urlStr = window.location.search;
+        const searchParams = new URLSearchParams(urlStr);
+
+        if (searchParams.has('c')) {
             const drinkId = searchParams.get('c');
             stack.push(GetCocktail(drinkId));
         }

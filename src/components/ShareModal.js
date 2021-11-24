@@ -65,7 +65,7 @@ const handleFocus = (e) => {
 export default function ShareModal(props) {
     const link = `${window.location.protocol}//${window.location.host}/${
         window.location.pathname.split('/')[1]
-    }/share?c=${props.cardInfo.id}`;
+    }/?c=${props.cardInfo.id}`;
 
     return props.isMainDisplayCard ? (
         <Modal
