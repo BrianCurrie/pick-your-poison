@@ -1,4 +1,18 @@
 import Modal from 'react-modal';
+import {
+    FacebookShareButton,
+    FacebookIcon,
+    TwitterShareButton,
+    TwitterIcon,
+    LinkedinShareButton,
+    LinkedinIcon,
+    RedditShareButton,
+    RedditIcon,
+    WhatsappShareButton,
+    WhatsappIcon,
+    EmailShareButton,
+    EmailIcon,
+} from 'react-share';
 import closeImg from '../images/close.svg';
 
 Modal.setAppElement(document.getElementById('root'));
@@ -37,6 +51,12 @@ const customStyles = {
         cursor: 'pointer',
         border: 'none',
         backgroundColor: 'transparent',
+    },
+    icons: {
+        marginBottom: '10px',
+    },
+    shareBtn: {
+        marginRight: '5px',
     },
     urlContainer: {
         border: '1px solid gray',
@@ -85,6 +105,31 @@ export default function ShareModal(props) {
                 </button>
             </div>
             <h2 style={customStyles.name}>{props.cardInfo.name}</h2>
+            <div style={customStyles.icons}>
+                <FacebookShareButton style={customStyles.shareBtn} url={link}>
+                    <FacebookIcon size={32} round={true} />
+                </FacebookShareButton>
+
+                <TwitterShareButton style={customStyles.shareBtn} url={link}>
+                    <TwitterIcon size={32} round={true} />
+                </TwitterShareButton>
+
+                <LinkedinShareButton style={customStyles.shareBtn} url={link}>
+                    <LinkedinIcon size={32} round={true} />
+                </LinkedinShareButton>
+
+                <RedditShareButton style={customStyles.shareBtn} url={link}>
+                    <RedditIcon size={32} round={true} />
+                </RedditShareButton>
+
+                <WhatsappShareButton style={customStyles.shareBtn} url={link}>
+                    <WhatsappIcon size={32} round={true} />
+                </WhatsappShareButton>
+
+                <EmailShareButton style={customStyles.shareBtn} url={link}>
+                    <EmailIcon size={32} round={true} />
+                </EmailShareButton>
+            </div>
             <div style={customStyles.urlContainer}>
                 <input
                     style={customStyles.link}
