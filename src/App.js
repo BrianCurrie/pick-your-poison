@@ -55,7 +55,8 @@ class App extends Component {
         }
 
         Promise.all(stack).then((data) => {
-            this.setState({ cocktailStack: data });
+            const validData = data.filter((data) => data != null);
+            this.setState({ cocktailStack: validData });
         });
     }
 
