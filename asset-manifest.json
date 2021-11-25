@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/pick-your-poison/static/css/main.27773466.chunk.css",
-    "main.js": "/pick-your-poison/static/js/main.b5c1a2f6.chunk.js",
-    "main.js.map": "/pick-your-poison/static/js/main.b5c1a2f6.chunk.js.map",
+    "main.js": "/pick-your-poison/static/js/main.4e78a51c.chunk.js",
+    "main.js.map": "/pick-your-poison/static/js/main.4e78a51c.chunk.js.map",
     "runtime-main.js": "/pick-your-poison/static/js/runtime-main.da90e4e5.js",
     "runtime-main.js.map": "/pick-your-poison/static/js/runtime-main.da90e4e5.js.map",
-    "static/js/2.89fee058.chunk.js": "/pick-your-poison/static/js/2.89fee058.chunk.js",
-    "static/js/2.89fee058.chunk.js.map": "/pick-your-poison/static/js/2.89fee058.chunk.js.map",
+    "static/js/2.14ee04e2.chunk.js": "/pick-your-poison/static/js/2.14ee04e2.chunk.js",
+    "static/js/2.14ee04e2.chunk.js.map": "/pick-your-poison/static/js/2.14ee04e2.chunk.js.map",
     "index.html": "/pick-your-poison/index.html",
     "static/css/main.27773466.chunk.css.map": "/pick-your-poison/static/css/main.27773466.chunk.css.map",
-    "static/js/2.89fee058.chunk.js.LICENSE.txt": "/pick-your-poison/static/js/2.89fee058.chunk.js.LICENSE.txt",
+    "static/js/2.14ee04e2.chunk.js.LICENSE.txt": "/pick-your-poison/static/js/2.14ee04e2.chunk.js.LICENSE.txt",
     "static/media/close.244b6687.svg": "/pick-your-poison/static/media/close.244b6687.svg",
     "static/media/favorite.cd88ec3c.svg": "/pick-your-poison/static/media/favorite.cd88ec3c.svg",
     "static/media/share.c25662dc.svg": "/pick-your-poison/static/media/share.c25662dc.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.da90e4e5.js",
-    "static/js/2.89fee058.chunk.js",
+    "static/js/2.14ee04e2.chunk.js",
     "static/css/main.27773466.chunk.css",
-    "static/js/main.b5c1a2f6.chunk.js"
+    "static/js/main.4e78a51c.chunk.js"
   ]
 }
