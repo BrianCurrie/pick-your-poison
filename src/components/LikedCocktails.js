@@ -14,13 +14,16 @@ export default function LikedCocktails(props) {
                 className={
                     cocktail.favorite
                         ? style.thumbnail_favorte
-                        : style.thumbnail
+                        : style.thumbnail_default
                 }
             >
                 <img
                     className={style.thumbnail_image}
                     src={cocktail.thumbnail}
                     alt={cocktail.name}
+                    onLoad={(e) => {
+                        e.target.style.display = 'block';
+                    }}
                 />
             </div>
             <div className={style.info_container}>

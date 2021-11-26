@@ -120,7 +120,6 @@ class App extends Component {
 
     favoriteCocktail() {
         let cocktailStack = this.state.cocktailStack;
-        console.log('favoriting: ' + cocktailStack[0].name);
         cocktailStack[0].favorite = true;
 
         this.setState({ cocktailStack: cocktailStack }, () => {
