@@ -9,7 +9,9 @@
 }
 
 .mobile_view_container {
-    height: 812px;
-    width: 375px;
+    height: 95%;
+    max-height: 1200px;
+    width: 450px;
     overflow: hidden;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1), 0 15px 40px rgba(0, 0, 0, 0.2);
 }
