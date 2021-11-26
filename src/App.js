@@ -37,6 +37,10 @@ class App extends Component {
 
     updateWindowDimensions() {
         this.setState({ width: window.innerWidth, height: window.innerHeight });
+
+        //Set vertical height property to handle mobile nav viewport variance
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty('--vh', `${vh}px`);
     }
 
     getInitialCocktails() {
