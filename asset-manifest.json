@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/pick-your-poison/static/css/main.6a23a5ff.chunk.css",
-    "main.js": "/pick-your-poison/static/js/main.4e78a51c.chunk.js",
-    "main.js.map": "/pick-your-poison/static/js/main.4e78a51c.chunk.js.map",
+    "main.js": "/pick-your-poison/static/js/main.3a11ae41.chunk.js",
+    "main.js.map": "/pick-your-poison/static/js/main.3a11ae41.chunk.js.map",
     "runtime-main.js": "/pick-your-poison/static/js/runtime-main.da90e4e5.js",
     "runtime-main.js.map": "/pick-your-poison/static/js/runtime-main.da90e4e5.js.map",
     "static/js/2.14ee04e2.chunk.js": "/pick-your-poison/static/js/2.14ee04e2.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.da90e4e5.js",
     "static/js/2.14ee04e2.chunk.js",
     "static/css/main.6a23a5ff.chunk.css",
-    "static/js/main.4e78a51c.chunk.js"
+    "static/js/main.3a11ae41.chunk.js"
   ]
 }
