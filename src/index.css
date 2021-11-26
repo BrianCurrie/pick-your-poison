@@ -16,10 +16,7 @@ body {
 }
 
 body {
-    /* Height fallback if custom variables are not supported */
     height: 100vh;
-    /* Variable height for correct mobile sizing */
-    height: calc(var(--vh, 1vh) * 100);
     width: 100vw;
     background-color: #f3f3f3;
     font-family: 'Gothic A1', sans-serif;
