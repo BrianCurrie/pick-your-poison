@@ -5,9 +5,9 @@ A cocktail discovery web application - find your next favorite drink.
 [Live Demo ✔️](https://briancurrie.github.io/pick-your-poison/)
 
 <p>
-  <img src="https://i.imgur.com/jETS8gN.png" width="33%" />
-  <img src="https://i.imgur.com/cVSUG8K.png" width="33%" /> 
-  <img src="https://i.imgur.com/E064uAr.png" width="33%" /> 
+  <img src="https://i.imgur.com/jETS8gN.png" width="32%" />
+  <img src="https://i.imgur.com/cVSUG8K.png" width="32%" /> 
+  <img src="https://i.imgur.com/E064uAr.png" width="32%" /> 
 </p>
 
 ## Features
